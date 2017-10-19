@@ -9,7 +9,7 @@ In some cases there is a "util.py", that contains small functions that are of se
 Running the main script will create a database filled with data.
 Keep in mind that depending on the marketplace / forum at hand this script can run several days since millions of files are processed.
 
-2) After step one, we convert the marketplace's native currency into Euro in bulk using "exchangerate.py". This is quite costly in terms of time when done during step one, so it is seperated to do this more efficiently.
+2) After step one, we convert the marketplace's native currency into Euro in bulk using "convertcurrency.py". This is quite costly in terms of time when done during step one, so it is seperated to do this more efficiently.
 This process can also take a while since we are dealing with over a million conversions at times
 
 3) Step Three will create a set of images referenced in the database making use of "convertimages.py". In case they are base64 encoded, these will be decoded and saved in .png. Apart from the decoding, this servers two purposes. For one, images take up a lot of space. The set of duplicates across crawls will be reduced to the minimum amount, that is, we don't store the same image(-name) twice. Another reasons that further analysis require a set of images and these analyses would be distorted if we used the same image multiple times.
