@@ -1,0 +1,63 @@
+// Marketplace
+
+{
+    	"name": String,
+	"url": String,
+	"nativeCurrency": Float,
+	"status": String,
+	"online": Float,
+	"categories": String,
+	"revenue": Float,
+	"timeframe": String,
+	"id": Integer,
+}
+
+
+// Category
+
+{
+    	"marketplace": String,
+	"name": String,
+	"ProductsInCategory": two dimensional array of type (String, Integer),
+	"revenue": two dimensional array of type (String, Float),
+	"revenueTotal": Float,
+	"timeframe": String,
+	"id": Integer,
+}
+
+// Vendor
+
+{
+    	"marketplace": String,
+	"Categories": String array,
+	"rating": String,
+	"reviews": Integer,
+	"revenue": two dimensional array of type (String, Float),
+	"revenueTotal": Float,
+	"productsFromGermany": Boolean,
+	"verifications": String array,
+	"PgpKey": String,
+	"identityId": Integer,
+	"description": String,
+	"timeframe": String,
+	"id": Integer,
+}
+
+
+// Product
+
+{
+    	"marketplace": String,
+	"category": String,
+	"price": Float,
+	"vendor": String,
+	"revenue": two dimensional array of type (String, Float),
+	"revenueTotal": Float,
+	"shipsFrom": String,
+	"destinations": String,
+	"firstSeen": Timestamp,
+	"lastSeen": Timestamp,
+	"description": String,	
+	"timeframe": String,
+	"id": Integer,
+}
