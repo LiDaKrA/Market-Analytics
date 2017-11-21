@@ -1,0 +1,19 @@
+--preliminary version--
+The following should give an overview on scripts used to fill a database with structured data based on the unstructured data from the GWERN-Archive
+
+1) For the marketplace or forum of interest consider the scripts contained in the associated folder
+This folder contains a main files.
+Along with that are one or two supporting files. One of them is called "model.py". This file contains classes for entities (like vendor, productname, etc). Those classes will create the schema of the to be created database in postgres.
+Please create a database with the respective name beforehand and specify the database-credentials in "main.py"
+In some cases there is a "util.py", that contains small functions that are of secondary importance, for example to clean up an expression and the like.
+
+Running the main script will fill the database with data from the respective forum / marketplace webpages.
+Keep in mind that depending on the marketplace / forum at hand this script can run several days since millions of files are processed and callbacks to the database are time-intensive.
+
+2) After step one, we convert the marketplace's native currency into Euro in bulk by calling "convertcurrency". This is quite costly in terms of time when done during step one, so it is seperated to do this more efficiently.
+This process can also take a while since we are dealing with over a million conversions at times.
+-- Instructions on how to do this follow --
+
+3) Step Three will create a set of images referenced in the database. In case they are base64 encoded, these will be decoded and saved in .png. Apart from the decoding, this servers two purposes. For one, images take up a lot of space. The set of duplicates across crawls will be reduced to the minimum amount, that is, we don't store the same image(-name) twice. Another reasons that further analysis require a set of images and these analyses would be distorted if we used the same image multiple times.
+You can do this by calling "convertcurrency.py"
+-- Instructions on how to do this follow --
