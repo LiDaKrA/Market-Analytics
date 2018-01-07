@@ -52,6 +52,7 @@ class Prices(base):
     price  = Column(Float, nullable=False)
     source = Column(String, nullable=False)
     srproductid = Column(Integer, nullable=False)
+    price_euro = Column(Float) 
     
 class Reviews(base): 
     __tablename__ = 'reviews'
@@ -65,7 +66,7 @@ class Reviews(base):
     reviewtext = Column(String)
     source = Column(String, nullable=False)
     srproductid = Column(Integer, nullable=False)  
-    price_dollar = Column(Float)  
+    price_euro = Column(Float)  
     
 class Categories(base): 
     __tablename__ = 'categories'
